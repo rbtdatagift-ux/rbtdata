@@ -1,0 +1,2247 @@
+/* =========================================================
+   RBTDATA GIFT
+   PREMIUM YELLOW + BLACK DESIGN
+========================================================= */
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+
+    --yellow: #f5c400;
+    --yellow-light: #ffd83d;
+    --yellow-dark: #d9a900;
+
+    --black: #050505;
+    --black-soft: #0b0b0b;
+    --dark-card: #111111;
+    --dark-card-2: #161616;
+
+    --white: #ffffff;
+    --white-soft: #eeeeee;
+    --text-muted: #9b9b9b;
+
+    --border-dark: rgba(255, 255, 255, 0.08);
+    --border-yellow: rgba(245, 196, 0, 0.30);
+
+    --shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45);
+
+    --radius-large: 28px;
+    --radius-medium: 20px;
+    --radius-small: 14px;
+
+    --transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   LIGHT MODE VARIABLES
+========================================================= */
+
+body.light-mode {
+
+    --black: #f5f5f5;
+    --black-soft: #ffffff;
+    --dark-card: #ffffff;
+    --dark-card-2: #f0f0f0;
+
+    --white: #111111;
+    --white-soft: #333333;
+    --text-muted: #666666;
+
+    --border-dark: rgba(0, 0, 0, 0.08);
+
+    --shadow:
+        0 20px 50px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(245, 196, 0, 0.08),
+            transparent 35%
+        ),
+        var(--black);
+
+    color: var(--white);
+
+    min-height: 100vh;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+
+}
+
+
+button,
+input {
+
+    font-family: inherit;
+
+}
+
+
+button {
+
+    cursor: pointer;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.top-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    height: 78px;
+
+    padding:
+        0 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        rgba(5, 5, 5, 0.82);
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid var(--border-dark);
+
+}
+
+
+body.light-mode .top-header {
+
+    background:
+        rgba(255, 255, 255, 0.88);
+
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.brand-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--yellow),
+            var(--yellow-dark)
+        );
+
+    color: #000;
+
+    font-size: 20px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 0 25px rgba(245, 196, 0, 0.25);
+
+}
+
+
+.brand-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1;
+
+}
+
+
+.brand-text h1 {
+
+    font-size: 17px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+.brand-text span {
+
+    color: var(--yellow);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-top: 4px;
+
+}
+
+
+/* =========================================================
+   DESKTOP NAV
+========================================================= */
+
+.desktop-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+.desktop-nav a {
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        color var(--transition);
+
+}
+
+
+.desktop-nav a:hover {
+
+    color: var(--yellow);
+
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.theme-btn,
+.menu-btn {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid var(--border-dark);
+
+    background:
+        var(--dark-card);
+
+    color: var(--white);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        all var(--transition);
+
+}
+
+
+.theme-btn:hover,
+.menu-btn:hover {
+
+    border-color: var(--yellow);
+
+    color: var(--yellow);
+
+    transform: translateY(-2px);
+
+}
+
+
+.menu-btn {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu {
+
+    display: none;
+
+    position: fixed;
+
+    top: 78px;
+
+    left: 0;
+
+    right: 0;
+
+    z-index: 999;
+
+    padding: 20px;
+
+    background:
+        rgba(10, 10, 10, 0.97);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid var(--border-dark);
+
+}
+
+
+body.light-mode .mobile-menu {
+
+    background:
+        rgba(255, 255, 255, 0.97);
+
+}
+
+
+.mobile-menu.active {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.mobile-menu a {
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    color: var(--text-muted);
+
+}
+
+
+.mobile-menu a:hover {
+
+    background:
+        rgba(245, 196, 0, 0.10);
+
+    color: var(--yellow);
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main {
+
+    width: 100%;
+
+    overflow: hidden;
+
+}
+
+
+section {
+
+    width: 100%;
+
+    padding:
+        90px 6%;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+
+    min-height: 650px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        0.8fr;
+
+    align-items: center;
+
+    gap: 60px;
+
+    position: relative;
+
+}
+
+
+.hero-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    background:
+        rgba(245, 196, 0, 0.10);
+
+    filter:
+        blur(100px);
+
+    border-radius: 50%;
+
+    top: 80px;
+
+    left: -150px;
+
+    pointer-events: none;
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+
+}
+
+
+.hero-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        9px 15px;
+
+    border:
+        1px solid var(--border-yellow);
+
+    background:
+        rgba(245, 196, 0, 0.08);
+
+    color: var(--yellow);
+
+    border-radius: 100px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.hero-content h2 {
+
+    font-size:
+        clamp(44px, 6vw, 78px);
+
+    line-height: 0.98;
+
+    letter-spacing: -3px;
+
+    font-weight: 900;
+
+    margin-bottom: 25px;
+
+}
+
+
+.hero-content h2 span {
+
+    display: block;
+
+    color: var(--yellow);
+
+}
+
+
+.hero-content p {
+
+    max-width: 580px;
+
+    color: var(--text-muted);
+
+    line-height: 1.8;
+
+    font-size: 16px;
+
+    margin-bottom: 32px;
+
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.primary-btn,
+.secondary-btn {
+
+    padding:
+        14px 23px;
+
+    border-radius: 13px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    transition:
+        all var(--transition);
+
+}
+
+
+.primary-btn {
+
+    background:
+        var(--yellow);
+
+    color: #000;
+
+    box-shadow:
+        0 10px 30px
+        rgba(245, 196, 0, 0.18);
+
+}
+
+
+.primary-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(245, 196, 0, 0.30);
+
+}
+
+
+.secondary-btn {
+
+    background:
+        var(--dark-card);
+
+    border:
+        1px solid var(--border-dark);
+
+    color: var(--white);
+
+}
+
+
+.secondary-btn:hover {
+
+    border-color:
+        var(--yellow);
+
+    color:
+        var(--yellow);
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =========================================================
+   WALLET CARD
+========================================================= */
+
+.hero-wallet {
+
+    position: relative;
+
+    padding: 30px;
+
+    min-height: 250px;
+
+    border-radius:
+        var(--radius-large);
+
+    background:
+        linear-gradient(
+            145deg,
+            #191919,
+            #080808
+        );
+
+    border:
+        1px solid
+        rgba(245, 196, 0, 0.22);
+
+    box-shadow:
+        var(--shadow);
+
+    overflow: hidden;
+
+}
+
+
+body.light-mode .hero-wallet {
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #eeeeee
+        );
+
+}
+
+
+.hero-wallet::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(245, 196, 0, 0.15);
+
+    filter:
+        blur(50px);
+
+    right: -70px;
+
+    top: -70px;
+
+}
+
+
+.wallet-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+
+}
+
+
+.wallet-status {
+
+    color: #62d26f;
+
+    font-size: 11px;
+
+}
+
+
+.wallet-balance {
+
+    font-size: 43px;
+
+    font-weight: 900;
+
+    margin:
+        28px 0;
+
+}
+
+
+.wallet-bottom {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+}
+
+
+.wallet-bottom div {
+
+    padding: 15px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    border:
+        1px solid var(--border-dark);
+
+}
+
+
+.wallet-bottom small {
+
+    display: block;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.wallet-bottom strong {
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+
+    max-width: 700px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.section-label {
+
+    display: inline-block;
+
+    color: var(--yellow);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.section-heading h2 {
+
+    font-size:
+        clamp(28px, 4vw, 46px);
+
+    line-height: 1.1;
+
+    font-weight: 900;
+
+    margin-bottom: 12px;
+
+}
+
+
+.section-heading p {
+
+    color: var(--text-muted);
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   PAYMENT SECTION
+========================================================= */
+
+.payment-section {
+
+    padding-top: 40px;
+
+}
+
+
+.payment-card {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1.4fr 1.5fr auto;
+
+    gap: 15px;
+
+    align-items: center;
+
+    padding: 22px;
+
+    border:
+        1px solid var(--border-dark);
+
+    background:
+        var(--dark-card);
+
+    border-radius:
+        var(--radius-medium);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.payment-info {
+
+    padding:
+        14px 16px;
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+}
+
+
+.payment-info span {
+
+    display: block;
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.payment-info strong {
+
+    font-size: 14px;
+
+    word-break: break-word;
+
+}
+
+
+.copy-btn {
+
+    border: none;
+
+    background:
+        var(--yellow);
+
+    color: #000;
+
+    padding:
+        13px 17px;
+
+    border-radius: 12px;
+
+    font-weight: 800;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+    transition:
+        all var(--transition);
+
+}
+
+
+.copy-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   NETWORKS
+========================================================= */
+
+.network-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.network-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    text-align: left;
+
+    padding: 20px;
+
+    border:
+        1px solid var(--border-dark);
+
+    background:
+        var(--dark-card);
+
+    color: var(--white);
+
+    border-radius:
+        var(--radius-medium);
+
+    transition:
+        all var(--transition);
+
+}
+
+
+.network-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        var(--yellow);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.25);
+
+}
+
+
+.network-logo {
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-weight: 900;
+
+    font-size: 16px;
+
+}
+
+
+.mtn .network-logo {
+
+    background: #ffcc00;
+
+    color: #000;
+
+}
+
+
+.airtel .network-logo {
+
+    background: #e50914;
+
+    color: #fff;
+
+}
+
+
+.glo .network-logo {
+
+    background: #00a651;
+
+    color: #fff;
+
+}
+
+
+.mobile9 .network-logo {
+
+    background: #008f4c;
+
+    color: #fff;
+
+}
+
+
+.network-card strong {
+
+    display: block;
+
+    font-size: 15px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.network-card span {
+
+    display: block;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   PACKAGE GRID
+========================================================= */
+
+.package-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.package-card {
+
+    padding: 22px;
+
+    border:
+        1px solid var(--border-dark);
+
+    background:
+        var(--dark-card);
+
+    border-radius:
+        var(--radius-medium);
+
+    transition:
+        all var(--transition);
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.package-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        var(--border-yellow);
+
+    box-shadow:
+        0 20px 40px
+        rgba(0, 0, 0, 0.25);
+
+}
+
+
+.package-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+
+    height: 80px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(245, 196, 0, 0.08);
+
+    right: -35px;
+
+    top: -35px;
+
+}
+
+
+.package-network {
+
+    color: var(--yellow);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+}
+
+
+.package-size {
+
+    font-size: 28px;
+
+    font-weight: 900;
+
+    margin:
+        12px 0 6px;
+
+}
+
+
+.package-price {
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    margin-bottom: 18px;
+
+}
+
+
+.package-buy {
+
+    width: 100%;
+
+    border: none;
+
+    background:
+        var(--yellow);
+
+    color: #000;
+
+    padding: 12px;
+
+    border-radius: 11px;
+
+    font-weight: 900;
+
+    font-size: 12px;
+
+    transition:
+        all var(--transition);
+
+}
+
+
+.package-buy:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   REFERRAL
+========================================================= */
+
+.referral-section {
+
+    position: relative;
+
+}
+
+
+.referral-card {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    text-align: center;
+
+    border-radius:
+        var(--radius-large);
+
+    border:
+        1px solid
+        rgba(245, 196, 0, 0.25);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(245, 196, 0, 0.10),
+            var(--dark-card)
+        );
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.referral-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin:
+        0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        rgba(245, 196, 0, 0.12);
+
+    font-size: 28px;
+
+}
+
+
+.referral-card h2 {
+
+    font-size:
+        clamp(30px, 5vw, 52px);
+
+    font-weight: 900;
+
+    margin:
+        10px 0 15px;
+
+}
+
+
+.referral-card h2 span {
+
+    display: block;
+
+    color: var(--yellow);
+
+}
+
+
+.referral-card > p {
+
+    max-width: 620px;
+
+    margin:
+        0 auto 25px;
+
+    color: var(--text-muted);
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   REFERRAL LINK
+========================================================= */
+
+.referral-link-box {
+
+    max-width: 650px;
+
+    margin:
+        25px auto 15px;
+
+    text-align: left;
+
+}
+
+
+.referral-link-box label {
+
+    display: block;
+
+    color: var(--yellow);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.referral-link-row {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+.referral-link-row input {
+
+    min-width: 0;
+
+    flex: 1;
+
+    border:
+        1px solid var(--border-dark);
+
+    outline: none;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    color: var(--white);
+
+    padding:
+        14px;
+
+    font-size: 12px;
+
+}
+
+
+.copy-referral-btn {
+
+    border: none;
+
+    background:
+        var(--yellow);
+
+    color: #000;
+
+    border-radius: 12px;
+
+    padding:
+        0 20px;
+
+    font-weight: 900;
+
+}
+
+
+.share-referral-btn {
+
+    border:
+        1px solid var(--border-yellow);
+
+    background:
+        transparent;
+
+    color: var(--yellow);
+
+    padding:
+        13px 22px;
+
+    border-radius: 12px;
+
+    font-weight: 800;
+
+    margin-bottom: 30px;
+
+    transition:
+        all var(--transition);
+
+}
+
+
+.share-referral-btn:hover {
+
+    background:
+        var(--yellow);
+
+    color: #000;
+
+}
+
+
+/* =========================================================
+   REFERRAL RULES
+========================================================= */
+
+.referral-rules {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.referral-rules div {
+
+    padding:
+        18px 12px;
+
+    border:
+        1px solid var(--border-dark);
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+}
+
+
+.referral-rules strong {
+
+    display: block;
+
+    color: var(--yellow);
+
+    font-size: 21px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.referral-rules span {
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   REFERRAL PROGRESS
+========================================================= */
+
+.referral-progress {
+
+    text-align: left;
+
+    margin-top: 20px;
+
+}
+
+
+.progress-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 9px;
+
+    font-size: 12px;
+
+}
+
+
+.progress-header span {
+
+    color: var(--text-muted);
+
+}
+
+
+.progress-header strong {
+
+    color: var(--yellow);
+
+}
+
+
+.progress-bar {
+
+    height: 9px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 100px;
+
+    overflow: hidden;
+
+}
+
+
+.progress-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--yellow-dark),
+            var(--yellow)
+        );
+
+    transition:
+        width 0.5s ease;
+
+}
+
+
+/* =========================================================
+   REFERRAL STATUS
+========================================================= */
+
+.referral-status {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+}
+
+
+.referral-status div {
+
+    padding:
+        14px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+    border:
+        1px solid var(--border-dark);
+
+}
+
+
+.referral-status span {
+
+    display: block;
+
+    color: var(--text-muted);
+
+    font-size: 9px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.referral-status strong {
+
+    font-size: 13px;
+
+}
+
+
+.referral-note {
+
+    font-size: 11px !important;
+
+    color: var(--text-muted);
+
+    margin-top: 12px !important;
+
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq-container {
+
+    max-width: 900px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.faq-container details {
+
+    background:
+        var(--dark-card);
+
+    border:
+        1px solid var(--border-dark);
+
+    border-radius: 15px;
+
+    padding:
+        18px 20px;
+
+    transition:
+        border-color var(--transition);
+
+}
+
+
+.faq-container details[open] {
+
+    border-color:
+        var(--border-yellow);
+
+}
+
+
+.faq-container summary {
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    list-style: none;
+
+}
+
+
+.faq-container summary::-webkit-details-marker {
+
+    display: none;
+
+}
+
+
+.faq-container summary::after {
+
+    content: "+";
+
+    float: right;
+
+    color: var(--yellow);
+
+    font-size: 20px;
+
+}
+
+
+.faq-container details[open] summary::after {
+
+    content: "−";
+
+}
+
+
+.faq-container details p {
+
+    color: var(--text-muted);
+
+    line-height: 1.7;
+
+    font-size: 13px;
+
+    margin-top: 13px;
+
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+
+    text-align: center;
+
+}
+
+
+.contact-section .section-heading {
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+}
+
+
+.social-icons {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.social-icons a {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    border:
+        1px solid var(--border-dark);
+
+    background:
+        var(--dark-card);
+
+    color: var(--white);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    transition:
+        all var(--transition);
+
+}
+
+
+.social-icons a:hover {
+
+    background:
+        var(--yellow);
+
+    color: #000;
+
+    border-color:
+        var(--yellow);
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding:
+        35px 6%;
+
+    border-top:
+        1px solid var(--border-dark);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+.footer-brand {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.footer-brand strong {
+
+    font-size: 14px;
+
+}
+
+
+.footer-brand span {
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+
+}
+
+
+footer p {
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+
+    .desktop-nav {
+
+        display: none;
+
+    }
+
+
+    .menu-btn {
+
+        display: flex;
+
+    }
+
+
+    .hero-section {
+
+        grid-template-columns: 1fr;
+
+        padding-top: 70px;
+
+    }
+
+
+    .hero-content {
+
+        max-width: 800px;
+
+    }
+
+
+    .hero-wallet {
+
+        max-width: 600px;
+
+    }
+
+
+    .payment-card {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .copy-btn {
+
+        width: 100%;
+
+    }
+
+
+    .network-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .package-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+
+    section {
+
+        padding:
+            65px 5%;
+
+    }
+
+
+    .top-header {
+
+        height: 70px;
+
+        padding:
+            0 5%;
+
+    }
+
+
+    .brand-icon {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+
+    .brand-text h1 {
+
+        font-size: 14px;
+
+    }
+
+
+    .hero-section {
+
+        min-height: auto;
+
+        gap: 35px;
+
+        padding-top: 55px;
+
+    }
+
+
+    .hero-content h2 {
+
+        font-size: 45px;
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .hero-content p {
+
+        font-size: 14px;
+
+    }
+
+
+    .hero-wallet {
+
+        padding: 23px;
+
+    }
+
+
+    .wallet-balance {
+
+        font-size: 35px;
+
+    }
+
+
+    .payment-card {
+
+        grid-template-columns:
+            1fr;
+
+        padding: 15px;
+
+    }
+
+
+    .network-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .network-card {
+
+        padding: 15px;
+
+        gap: 10px;
+
+    }
+
+
+    .network-logo {
+
+        width: 43px;
+
+        height: 43px;
+
+    }
+
+
+    .package-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .package-card {
+
+        padding: 17px;
+
+    }
+
+
+    .package-size {
+
+        font-size: 24px;
+
+    }
+
+
+    .referral-card {
+
+        padding: 28px 17px;
+
+    }
+
+
+    .referral-rules {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .referral-status {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .referral-link-row {
+
+        flex-direction: column;
+
+    }
+
+
+    .copy-referral-btn {
+
+        padding: 13px;
+
+    }
+
+
+    footer {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+
+    .network-grid,
+    .package-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .hero-content h2 {
+
+        font-size: 39px;
+
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+    }
+
+
+    .primary-btn,
+    .secondary-btn {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+}
